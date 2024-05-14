@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- the new XML Schema-style -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="addr1" class="com.springcore.autowire.Address">
+		<property name="street" value="x-street" />
+		<property name="city" value="Hyderabad" />
+	</bean>
+	
+	<bean name="addr" class="com.springcore.autowire.Address">
+		<property name="street" value="xy-street" />
+		<property name="city" value="Pune" />
+	</bean>
+	
+	<!-- For setting values by setter method we use: -->
+	<!-- byName: checks object from name of bean of that class -->
+	<!-- byType: checks className from name of bean and of that class. (If it will found more than ane bean with same class name it will through exception!) -->
+	
+<!-- 	<bean name="emp" class="com.springcore.autowire.Employee" autowire="byName" />  -->
+<!-- 	<bean name="emp" class="com.springcore.autowire.Employee" autowire="byType" /> -->
+
+	<!-- For setting values by constructor we use: -->
+	<!-- constructor in autowire -->
+		<bean name="emp" class="com.springcore.autowire.Employee" autowire="constructor" /> 
+
+</beans>

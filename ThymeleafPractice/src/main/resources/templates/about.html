@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>about-thymeleaf</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<style type="text/css">
+body {
+	font-family: Tahoma;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center text-dark p-4">
+			About <span th:text="${Company}"></span>
+		</h1>
+
+		<div th:with="a=5,b=6 ,n=${name}">
+			<!-- Creating variables -->
+			<p>The value of a: <span th:text=${a}>
+				</span> and value of b: <span th:text=${b}></span><br>
+				<span th:text="'Name: '+${n}"></span>
+			</p>
+		</div>
+
+		<div class="card border-light mb-3 "
+			style="width: 36rem; left: 50%; margin-top: 21%;">
+			<div class="card-body">
+				<h5 class="card-title text-success text-capitalize">HEALTHY
+					FOOD CAN BE DELICIOUS</h5>
+				<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				<p class="card-text">Plate was established in 2022, as a
+					reliable food service provider where anyone could order healthy
+					food they like. Choose gluten-free meals from our menu The freshest
+					ingredients for every dish Get great discounts when ordering for
+					2M+ people</p>
+				<p th:text="${currentDate}"></p>
+				<a href="#" class="card-link">Card link</a> <a href="#"
+					class="card-link">Another link</a>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
